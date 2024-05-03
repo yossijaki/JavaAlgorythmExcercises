@@ -31,4 +31,4 @@ public class evaluateReversePolishNotation {
         System.out.println(solution.evaluateReversePolishNotation(new String[]{"4","13","5","/","+"})); // Output: 6
         System.out.println(solution.evaluateReversePolishNotation(new String[]{"10","6","9","3","+","-11","*","/","*","17","+","5","+"})); // Output: 22
     }
-} 
+}
