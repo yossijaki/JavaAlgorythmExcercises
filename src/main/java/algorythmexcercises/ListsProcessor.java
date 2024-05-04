@@ -14,6 +14,7 @@ public class ListsProcessor {
         for (String fruit : allFruits) {
             System.out.println(fruit);        
         }
+        System.out.println("\n");
     }
     
     public static void iterateAndPrintAListOfStringsWithForEachFromTheIterableInterfaceImplementedOnListClass() {
