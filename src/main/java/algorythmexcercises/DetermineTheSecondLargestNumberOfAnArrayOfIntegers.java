@@ -5,7 +5,7 @@
 package main.java.algorythmexcercises;
 /**
  *
- * @author Orochi
+ * @author Yossijaki
  */
 public class DetermineTheSecondLargestNumberOfAnArrayOfIntegers {
     
