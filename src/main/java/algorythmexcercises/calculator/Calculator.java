@@ -43,7 +43,7 @@ public class Calculator {
 		int secondParam = scan.nextInt();
 		
 		int result = Operations.performIntOperation(operationName, firstParam, secondParam);
-		System.out.println("the result of your operation is: " + result);
+		System.out.println("the result of your " + operationName + " is: " + result);
 	}
 	
 	private static void performDoubleOperations(String operationName, Scanner scan) {
@@ -54,7 +54,7 @@ public class Calculator {
 		double secondParam = scan.nextDouble();
 		
 		double result = Operations.performDoubleOperations(operationName, firstParam, secondParam);
-		System.out.println("The result of your operation is: " + result);
+		System.out.println("The result of your " + operationName + " is: " + result);
 	}
 
 }
