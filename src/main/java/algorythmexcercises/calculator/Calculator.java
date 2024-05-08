@@ -6,48 +6,55 @@ public class Calculator {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Please enter the operation option that you want to execute\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division");
-		int option = scan.nextInt();
-		
-		switch (option) {
-		case 1: {
-			System.out.println("--- ADDITION ---\nPlease enter the first parameter to add");
-			int firstParam = scan.nextInt();
-			System.out.println("Now, enter the second parameter");
-			int secondParam = scan.nextInt();
-			int addition = new Operations().addition(firstParam, secondParam);
-			System.out.println("The result of you sum is: " + addition);
-			break;
-		} case 2: {
-			System.out.println("--- SUBSTRACTION ---\nPlease enter the first parameter to substract");
-			int firstParam = scan.nextInt();
-			System.out.println("Now, enter the second parameter");
-			int secondParam = scan.nextInt();
-			int substraction = new Operations().substraction(firstParam, secondParam);
-			System.out.println("The result of your substraction is: " + substraction );
-			break;
-		} case 3: {
-			System.out.println("--- MULTIPLICATION ---\nPlease enter the first parameter to multiplicate");
-			int firstParam = scan.nextInt();
-			System.out.println("Now, enter the second parameter");
-			int secondParam = scan.nextInt();
-			int multiplication = new Operations().multiplication(firstParam, secondParam);
-			System.out.println("The result of your multiplication is: " + multiplication);
-			break;
-		} case 4: {
-			System.out.println("--- DIVISION ---\nPlease enter the first parameter to divide");
-			double firstParam = scan.nextInt();
-			System.out.println("Now, enter the second parameter");
-			double secondParam = scan.nextInt();
-			double division = new Operations().division(firstParam, secondParam);
-			System.out.println("The result of you division is: " + division);
-			break;
+		try {
+			System.out.println("Please enter the operation option that you want to execute\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division");
+			int option = scan.nextInt();
+			
+			switch (option) {
+			case Operations.ADD:
+				performIntOperations("addition", scan);
+				break;
+			case Operations.SUBSTRACT:
+				performIntOperations("substraction", scan);
+				break;
+			case Operations.MULTIPLY:
+				performIntOperations("multiplication", scan);
+				break;
+			case Operations.DIVIDE:
+				performDoubleOperations("division", scan);
+				break;
+			default:
+				unexpectedOption(option);
+			}
+		}	finally {
+			scan.close();
 		}
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + option);
-		}
+	}
+
+	private static void unexpectedOption(int option) {
+		throw new IllegalArgumentException("The value you've introduced was not expected: " + option);
+	}
+	
+	private static void performIntOperations(String operationName, Scanner scan) {
+		System.out.println("--- " + operationName.toUpperCase() + " ---");
+		System.out.println("Please enter the first parameter");
+		int firstParam = scan.nextInt();
+		System.out.println("Now, enter the second parameter");
+		int secondParam = scan.nextInt();
 		
+		int result = Operations.performIntOperation(operationName, firstParam, secondParam);
+		System.out.println("the result of your operation is: " + result);
+	}
+	
+	private static void performDoubleOperations(String operationName, Scanner scan) {
+		System.out.println("--- " + operationName.toUpperCase() + " ---");
+		System.out.println("Please enter the first parameter");
+		double firstParam = scan.nextDouble();
+		System.out.println("Now, enter the second parameter");
+		double secondParam = scan.nextDouble();
 		
+		double result = Operations.performDoubleOperations(operationName, firstParam, secondParam);
+		System.out.println("The result of your operation is: " + result);
 	}
 
 }
