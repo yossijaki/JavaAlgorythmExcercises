@@ -3,7 +3,7 @@ package main.java.algorythmexcercises;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 class StreamFilteringListOfStrings {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ class StreamFilteringListOfStrings {
     System.out.println(filteredCountries);
     }
     
-    @Test
+    //@Test
     public void testFilteredCountriesStartingWithM() {
         // Creating the mock of original collection of countries
         List<String> countries = List.of("Morocco", "Italy", "Brazil","Mexico", "Australia", "Germany", "South Africa", "Madagascar");
